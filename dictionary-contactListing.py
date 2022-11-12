@@ -23,10 +23,9 @@ while True:
 
 #My Reference https://www.geeksforgeeks.org/python-nested-dictionary/
 
-    Dict = {
+    userDetails = {
         userName:{'name': userName,
                   'gender':userGender,
-                  'age':userGender,
                   'age':userAge,
                   'email':userEmail,
                   'address':userAddress,
@@ -37,6 +36,17 @@ while True:
     print("The user information has been saved!\n")
         
         
-    #if Option 2
-    
+    #if Option 2 Search function
+    if user_input == 2:
+        print("<Type the name you want to search> \n")
+        search = input("Name: ")
+        
+        print("\n<========= User's Info ============>\n")
+        print("Name: " + userDetails[search]['name'])
+        print("Gender: " + userDetails[search]['gender'])
+        print("Age: " + userDetails[search]['age'])
+        print("Email: " + userDetails[search]['email'])
+        print("Address: " + userDetails[search]['address'])
+        print("Contact Numer: " + userDetails[search]['contact'])
+        
     #if Option 3
