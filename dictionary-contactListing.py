@@ -19,7 +19,8 @@ while True:
         userEmail = input("Email: ")
         userAddress = input("Address: ")
         userContact = input("Contact Number: ")
-
+        print("\nThe user is now in the directory.\n")
+        print("The user information has been saved!\n")
 
 #My Reference https://www.geeksforgeeks.org/python-nested-dictionary/
 
@@ -32,13 +33,11 @@ while True:
                   'contact':userContact }
     }
     
-    print("\nThe user is now in the directory.\n")
-    print("The user information has been saved!\n")
         
         
     #if Option 2 Search function
     if user_input == 2:
-        print("<Type the name you want to search> \n")
+        print("\n<Type the name you want to search> \n")
         search = input("Name: ")
         
         print("\n<========= User's Info ============>\n")
@@ -50,3 +49,8 @@ while True:
         print("Contact Numer: " + userDetails[search]['contact'])
         
     #if Option 3
+    
+    if user_input == 3:
+        inputOption3 = input("Are you sure you want to exit? (y/n): ")
+        if inputOption3 == 'y':
+            break
