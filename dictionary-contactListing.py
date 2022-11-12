@@ -3,6 +3,8 @@
 print("<==========> Menu <==========> \n\n 1 -> Add item \n 2 -> Search \n 3 -> Exit (y/n) \n")
 print("<============================>")
 
+userList = {}
+
 while True:
     #user input
     user_input = int(input("\nWhat do you want to do?(1-3)?: "))
@@ -24,14 +26,15 @@ while True:
 
 #My Reference https://www.geeksforgeeks.org/python-nested-dictionary/
 
-    userDetails = {
-        userName:{'name': userName,
+        userDetails = {'name': userName,
                   'gender':userGender,
                   'age':userAge,
                   'email':userEmail,
                   'address':userAddress,
                   'contact':userContact }
-    }
+        
+        #Using the initial dictionary we transfer the userDetails inside another dictionary 
+        userList[userName] = userDetails
     
         
         
@@ -40,14 +43,16 @@ while True:
         print("\n<Type the name you want to search> \n")
         search = input("Name: ")
         
-        print("\n<========= User's Info ============>\n")
-        print("Name: " + userDetails[search]['name'])
-        print("Gender: " + userDetails[search]['gender'])
-        print("Age: " + userDetails[search]['age'])
-        print("Email: " + userDetails[search]['email'])
-        print("Address: " + userDetails[search]['address'])
-        print("Contact Numer: " + userDetails[search]['contact'])
-        
+        if search in userList:
+            print("\n<========= User's Info ============>\n")
+            print("Name: " + userList[search]['name'])
+            print("Gender: " + userList[search]['gender'])
+            print("Age: " + userList[search]['age'])
+            print("Email: " + userList[search]['email'])
+            print("Address: " + userList[search]['address'])
+            print("Contact Numer: " + userList[search]['contact'])
+        else:
+            print("\nName not in Database!\n")    
     #if Option 3
     
     if user_input == 3:
