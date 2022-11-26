@@ -7,9 +7,11 @@ userList = {}
 
 while True:
     #user input
-    user_input = int(input("\nWhat do you want to do?(1-3)?: "))
-
-
+    try:
+        user_input = int(input("\nWhat do you want to do?(1-3)?: "))
+    except:
+        print("Error Input")
+        exit()
     #if Option 1
     if user_input == 1:
         
@@ -39,7 +41,7 @@ while True:
         
         
     #if Option 2 Search function
-    if user_input == 2:
+    elif user_input == 2:
         print("\n<Type the name you want to search> \n")
         search = input("Name: ")
         
@@ -54,8 +56,8 @@ while True:
         else:
             print("\nName not in Database!\n")    
     #if Option 3
-    
-    if user_input == 3:
+    elif user_input == 3:
         inputOption3 = input("Are you sure you want to exit? (y/n): ")
         if inputOption3 == 'y':
             break
+    
